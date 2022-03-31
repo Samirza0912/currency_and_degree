@@ -29,50 +29,53 @@ namespace currency_and_degree
             #endregion
             Console.WriteLine("1.Usd\n2.Eur\n3.Try");
             int n = int.Parse(Console.ReadLine());
+            double azn= double.Parse(Console.ReadLine());
             switch (n)
             {
                 case (int)Currency.Usd:
-                    Console.WriteLine(Exchange(Currency.Usd));
+                    Console.WriteLine(Exchange(azn,Currency.Usd));
                     break;
 
                 case (int)Currency.Eur:
-                    Console.WriteLine(Exchange(Currency.Eur));
+                    Console.WriteLine(Exchange(azn,Currency.Eur));
                     break;
                 case (int)Currency.Try:
-                    Console.WriteLine(Exchange(Currency.Try));
+                    Console.WriteLine(Exchange(azn,Currency.Eur));
                     break;
             }
 
-            Kelvin degr = new Kelvin(0);
+            Kelvin kelvin = new Kelvin(90);
             Celcius celcius = kelvin;
-            Console.WriteLine(celcius.degree);
-            
-            
+            Console.WriteLine(celcius.Degree);
+
+
         }
 
-     
+
 
         public static double Exchange(double azn, Currency currency)
         {
- 
+            double result = 0;
+
             if (currency is Currency)
             {
+                
                 if (Currency.Usd==currency)
                 {
-                    return azn * 1.7;  
+                    result= azn * 1.7;  
                 }
                 else if (Currency.Eur==currency)
                 {
-                    return azn*1.89;  
+                    result = azn*1.89;  
                 }
                 else if (Currency.Try==currency)
                 {
-                    return azn * 0.12;  
+                    result = azn * 0.12;  
                 }
 
             }
-            return 1;
-            
+            return result;
+                
             
         }
     }

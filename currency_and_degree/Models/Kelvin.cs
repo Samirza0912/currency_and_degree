@@ -1,5 +1,5 @@
 ﻿using System;
-namespace currency_and_degree.Models
+namespace currency_and_degree
 {
     public class Kelvin
     {
